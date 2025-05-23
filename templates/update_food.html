@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block body %}
+  <h2>Edit Food Entry</h2>
+
+  <form method="POST">
+    <div class="mb-3">
+      <label for="food_name" class="form-label">Food Name</label>
+      <input type="text" name="food_name" class="form-control" value="{{ food.name }}" required>
+    </div>
+    <div class="mb-3">
+      <label for="food_serving" class="form-label">Serving (g)</label>
+      <input type="number" name="food_serving" class="form-control" value="{{ food.serving }}" required>
+    </div>
+    <div class="mb-3">
+      <label for="food_calories" class="form-label">Calories</label>
+      <input type="number" name="food_calories" class="form-control" value="{{ food.calories }}" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a href="{{ url_for('index') }}" class="btn btn-secondary">Cancel</a>
+  </form>
+{% endblock %}

@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% block body %}
-  <h1>Welcome, user!</h1>
+<h1>Welcome, {{ current_user.username }}!</h1>
+<p><a href="{{ url_for('logout') }}" class="btn btn-outline-secondary btn-sm">Выйти</a></p>
+
   <p>You ate {{ total_calories }} calories out of 2000 recommended.</p>
 
   {% if foods|length == 0 %}
