@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  web:
+    build: .
+    container_name: fittracker
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+      - instance_data:/app/instance
+    environment:
+      - FLASK_APP=app.py
+      - FLASK_RUN_HOST=0.0.0.0
+      - FLASK_ENV=development  # Опционально для отладки
+
+volumes:
+  instance_data:
