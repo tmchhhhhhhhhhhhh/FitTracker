@@ -5,6 +5,7 @@ from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import LoginManager, login_user, logout_user, login_required, current_user, UserMixin
 from flask_migrate import Migrate
+from settings import SECRET
 
 
 
@@ -14,7 +15,7 @@ from flask_migrate import Migrate
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///food.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.secret_key = 'superPuperSecretKey123'
+app.secret_key = SECRET
 
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)

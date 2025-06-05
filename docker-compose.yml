@@ -12,7 +12,7 @@ services:
     environment:
       - FLASK_APP=app.py
       - FLASK_RUN_HOST=0.0.0.0
-      - FLASK_ENV=development  # Опционально для отладки
+      - FLASK_ENV=development  
 
 volumes:
   instance_data:
